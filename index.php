@@ -11,7 +11,7 @@
         <form action="index.php" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="text" class="form-control" name="Email" id="exampleFormControlInput1" placeholder="name@example.com" value="<?php echo $_POST['Email'] ?? '' ?>">
+                <input type="text" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com" value="<?php echo $_POST['email'] ?? '' ?>">
             </div>
             <div class="col-auto">
                 <label for="inputPassword2" class="visually-hidden">Password</label>
@@ -28,7 +28,7 @@
 <div class="container">
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        echo '<b>Email</b> = ' . ($_POST['Email'] ?? '') . '<br>';
+        echo '<b>Email</b> = ' . ($_POST['email'] ?? '') . '<br>';
         echo 'Password = ' . ($_POST['pass'] ?? '');
     }
     ?>
