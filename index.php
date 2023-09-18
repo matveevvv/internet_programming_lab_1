@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-     <title> Моя первая форма</title>
-</head>
 <body>
-
 <form action="index.php" method="post">
-    <div>
-     <label for= "Login"> Login </label>
-     <input type = "text" name = "Login" id="Login" value="<?php echo $_POST['Login'] ?? '' ?>">
-    </div>
-
-    <div>
-
-         <label for="pass">Password</label>
-         <input type="text" name="pass" id="pass" value="<?php echo $_POST['pass'] ?? '' ?>">
-    </div>
-    <div>
-         <input type="submit" value="Войти">
-    </div>
+    <input type="text" placeholder="login" name="login">
+    <input type="text" placeholder="password" name="pass">
+    <button type="submit" >Войти</button>
 
 </form>
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
- echo '<b>Login</b> = ' . ($_POST['Login'] ?? '') . '<br>';
- echo 'Password = ' . ($_POST['pass'] ?? '');
+$login = $_POST['login'];
+$pass = $_POST['pass'];
+if(empty ($login) || empty($pass))
+{
+    echo "Заполните все поля";
+} else {
+    echo "Login =  $login" ;
+    echo "Password =  $pass";
 }
-?>
 
+
+
+?>
 </body>
+
 </html>
+
+
+
